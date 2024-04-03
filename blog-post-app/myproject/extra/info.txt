@@ -1,0 +1,44 @@
+
+To create a new django project:
+    > django-admin startproject myproject
+
+To create a new django app:
+    > cd myproject
+    > python manage.py startapp myapp
+
+To link a new app to a project:
+    * Edit myproject/settings.py (add "myapp" to INSTALLED_APPS)
+
+To start the django server:
+    > python manage.py runserver 8001
+
+To edit the emmet settings (for language file types):
+    * Type control-comma
+    * Type emmet
+    * Scroll down to Emmet: Include Languages
+    * add: django-html -> html 
+
+Default URL's:
+    project site: http://127.0.0.1:8000 
+    admin site: http://127.0.0.1:8000/admin
+
+To create a django database superuser:
+    > (stop the server, control-C)
+    > python manage.py createsuperuser
+    > (use admin/admin)
+    > python manage.py runserver (restart the server)
+    > goto http://127.0.0.1:8000/admin
+    > Login as admin/admin
+
+To migrate database changes (do this each time a db model change is made):
+    > (stop the server, control-C)
+    > python manage.py makemigrations
+    > python manage.py migrate
+    > python manage.py runserver (restart the server)
+
+To collect the static files into the 'assets' directory (for deployment):
+    > python manage.py collectstatic
+
+To start a Python shell:
+    > python manage.py shell
+
